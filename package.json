@@ -1,0 +1,26 @@
+{
+  "name": "nightwatch-skeleton",
+  "version": "1.0.0",
+  "description": "eduMeet nightwatch test skeleton",
+  "author": "Mészáros Mihály <misi@majd.eu>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "chromedriver": "^83.0.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "events": "^3.1.0",
+    "geckodriver": "^1.19.1",
+    "nightwatch": "^1.3.5",
+    "operadriver": "^1.0.0"
+  }
+}

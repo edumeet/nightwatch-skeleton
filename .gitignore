@@ -1,0 +1,7 @@
+node_modules
+tests_output
+logs
+mnt/*
+!mnt/README.md
+tmp
+.env

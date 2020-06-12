@@ -1,0 +1,69 @@
+# To execute this docker-compose yml file use `docker-compose -f <file_name> up`
+# Add the `-d` flag at the end for detached execution
+version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:3.141.59-20200525
+    #image: selenium/hub:latest
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    environment:
+      - GRID_MAX_SESSION=30
+      #- qGRID_TIMEOUT=999999
+      #- GRID_BROWSER_TIMEOUT=999999
+      - GRID_DEBUG=true
+      - SE_OPTS=--debug
+  chrome:
+    image: selenium/node-chrome-debug:3.141.59-20200525
+    # image: selenium/node-chrome-debug:latest
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./mnt:/mnt:ro
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=20
+      - NODE_MAX_SESSION=20
+    ports:
+      - "5900:5900"
+
+  firefox:
+    #image: selenium/node-firefox-debug:3.141.59-20200525
+    image: selenium/node-firefox-debug:latest
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./mnt:/mnt:ro
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=20
+      - NODE_MAX_SESSION=20
+      - GRID_DEBUG=true
+      - DRIVER_LOGLEVEL=trace
+      - SE_OPTS=--debug
+    ports:
+      - "5901:5900"
+
+  opera:
+    image: selenium/node-opera-debug:3.141.59-20200525
+    # image: selenium/node-opera-debug:latest
+    volumes:
+      - /dev/shm:/dev/shm
+      - ./mnt:/mnt:ro
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+      - NODE_MAX_INSTANCES=20
+      - NODE_MAX_SESSION=20
+      - GRID_DEBUG=true
+      - DRIVER_LOGLEVEL=trace
+      - SE_OPTS=--debug
+    ports:
+      - "5902:5900"

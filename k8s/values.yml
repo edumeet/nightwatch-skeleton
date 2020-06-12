@@ -1,0 +1,28 @@
+---
+  hub:
+    readinessTimeout: 300
+    readinessDelay: 15
+    livenessTimeout: 300
+    #seOpts: '--debug'
+    #javaOpts: '-Xmx400m -XX:+UseSerialGC'
+    gridMaxSession: 200
+    gridTimeout: 30
+    gridBrowserTimeout: 0
+  chrome: 
+    enabled: true
+    replicas: 1
+    resources: {"limits":{"cpu":"2.5", "memory":"1024Mi"}}
+    nodeMaxInstances: 4
+    nodeMaxSession: 4
+    #seOpts: '--debug'
+    #extraEnvs:
+    #  - name: "GRID_DEBUG"
+    #    value: "true"
+    #  - name: "SE_OPTS"
+    #    value: "--debug"
+  firefox:
+    enabled: true
+    replicas: 1
+    resources: {"limits":{"cpu":"2.5", "memory":"1024Mi"}}
+    nodeMaxInstances: 4
+    nodeMaxSession: 4
