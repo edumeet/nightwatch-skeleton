@@ -33,7 +33,7 @@ docker-compose up -d
 ```
 
 ```sh
-npx nightwatch -e docker.gird.chrome
+npx nightwatch -e docker.grid.chrome
 npx nightwatch -e docker.grid.firefox
 npx nightwatch -e docker.grid.opera
 ```
