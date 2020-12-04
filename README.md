@@ -56,6 +56,6 @@ install helm selenium chart with this values.yml
 ### run
 
 ```sh
-npx nightwatch -e docker.k8s.chrome
-npx nightwatch -e docker.k8s.firefox
+npx nightwatch -e k8s.grid.chrome
+npx nightwatch -e k8s.gird.firefox
 ```
