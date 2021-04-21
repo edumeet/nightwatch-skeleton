@@ -12,7 +12,7 @@ module.exports = {
       .click('button.MuiButtonBase-root:nth-child(2)')
       .waitForElementVisible('.webcam', 150000)
       .waitForMediaPlaybackReady('.isMe', 10000)
-      .pause(30000)
+      .pause(3000)
       .saveScreenshot(`tmp/screencapture-${randomId}.png`)
       .end()
   }

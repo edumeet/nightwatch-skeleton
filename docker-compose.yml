@@ -3,8 +3,8 @@
 version: "3"
 services:
   selenium-hub:
-    image: selenium/hub:3.141.59-20200525
-    #image: selenium/hub:latest
+    image: selenium/hub:3.141.59-20210311
+      #image: selenium/hub:latest
     container_name: selenium-hub
     ports:
       - "4444:4444"
@@ -15,8 +15,8 @@ services:
       - GRID_DEBUG=true
       - SE_OPTS=--debug
   chrome:
-    image: selenium/node-chrome-debug:3.141.59-20200525
-    # image: selenium/node-chrome-debug:latest
+    image: selenium/node-chrome-debug:3.141.59-20210311
+    #image: selenium/node-chrome-debug:latest
     volumes:
       - /dev/shm:/dev/shm
       - ./mnt:/mnt:ro
@@ -31,8 +31,8 @@ services:
       - "5900:5900"
 
   firefox:
-    #image: selenium/node-firefox-debug:3.141.59-20200525
-    image: selenium/node-firefox-debug:latest
+    image: selenium/node-firefox-debug:3.141.59-20210311
+    #image: selenium/node-firefox-debug:latest
     volumes:
       - /dev/shm:/dev/shm
       - ./mnt:/mnt:ro
@@ -50,7 +50,7 @@ services:
       - "5901:5900"
 
   opera:
-    image: selenium/node-opera-debug:3.141.59-20200525
+    image: selenium/node-opera-debug:3.141.59-20210311
     # image: selenium/node-opera-debug:latest
     volumes:
       - /dev/shm:/dev/shm

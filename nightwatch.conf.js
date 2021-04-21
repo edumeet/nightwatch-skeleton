@@ -229,11 +229,11 @@ module.exports = {
             'auto-select-desktop-capture-source="Entire screen"',
             'autoplay-policy=no-user-gesture-required',
             'no-user-gesture-required',
-            'ignore-certificate-errors'
+            'ignore-certificate-errors',
             // "whitelisted-ips"
-            // "enable-logging=stderr",
-            // "log-level=3",
-            // "v=4"
+            "enable-logging=stderr",
+            "log-level=3",
+            "v=4"
           ]
         }
       }
@@ -283,7 +283,7 @@ module.exports = {
     },
 
     chrome: {
-      extends: 'chrome.video.template',
+      extends: 'chrome.template',
       webdriver: {
         start_process: true,
         port: 9515,
