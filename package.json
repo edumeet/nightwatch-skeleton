@@ -20,7 +20,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "events": "^3.1.0",
     "geckodriver": "^1.21.1",
-    "nightwatch": "^1.6.3",
+    "nightwatch": "^1.7.13",
     "operadriver": "^1.0.0"
   }
 }
